@@ -5,6 +5,19 @@ from typing import List, Optional
 import os
 from dotenv import load_dotenv
 
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
+
+# 1. On indique où se trouvent tes fichiers frontend (HTML, CSS, JS)
+# Assure-toi d'avoir un dossier nommé 'frontend' à la racine de ton projet
+if os.path.exists("frontend"):
+    app.mount("/static", StaticFiles(directory="frontend"), name="static")
+
+# 2. On crée une route qui envoie ton fichier index.html quand on arrive sur le site
+@app.get("/")
+async def read_index():
+    return FileResponse("frontend/index.html")
+
 load_dotenv()
 
 # ---------------------------------------------------------------------------
