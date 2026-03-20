@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #ffffff;
+  --color-foreground: #0a1128;
+  --color-accent-light: #FDE2E4;
+  --color-accent-navy: #0a1128;
+
+  --font-family-serif: var(--font-serif), serif;
+  --font-family-sans: var(--font-sans), sans-serif;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #0a1128;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-sans), sans-serif;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-serif), serif;
+}
+
+.image-hover-effect {
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.image-hover-effect:hover {
+  transform: scale(1.02);
+  filter: brightness(0.9);
+}

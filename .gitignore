@@ -1,0 +1,17 @@
+# Dépendances (lourd et inutile)
+node_modules/
+venv/
+.env
+
+# Cache et Build (ce qui fait planter ton push)
+.next/
+dist/
+build/
+.cache/
+*.sst
+
+# Images lourdes (si tu en as mis trop en local)
+*.jpg
+*.jpeg
+*.png
+*.gif
